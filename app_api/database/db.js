@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const host = process.env.DB_HOST || '127.0.0.1';
 const dbURI = 'mongodb://127.0.0.1:27017/travlr';
-const readline = require('readline');
+const readLine = require("readline");
 
 // avoid 'curent Server Discovery and Monitoring engine is deprecated'
 mongoose.set('useUnifiedTopology', true);
@@ -24,7 +24,7 @@ mongoose.connection.on('disconnected', () => {
   console.log('Mongoose disconnected');
 });
 
-if (process.platform === 'win32') {
+if (process.platform == 'win32') {
   const rl = readLine.createInterface({
     input: process.stdin,
     output: process.stdout
